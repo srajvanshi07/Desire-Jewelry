@@ -1,0 +1,48 @@
+﻿@model WebMVC.Models.Catalog
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+               Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Picture
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Data) {
+        <tr>
+            
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <td>
+                @item.Price
+            </td>
+            <td>
+                <img src="@item.PictureUrl"/>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
